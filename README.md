@@ -111,6 +111,10 @@ python src/market_orders.py BTCUSDT BUY 0.002
 python src/limit_orders.py BTCUSDT SELL 0.002 95000
 
 ---
+## Sample Outputs & Screenshots
+<img width="721" height="538" alt="image" src="https://github.com/user-attachments/assets/d97a6694-7efc-403e-ad45-2d6f6ae3eb2f" />
+
+
 
 ## Logs
 
