@@ -1,0 +1,136 @@
+BINANCE FUTURES ORDER BOT – DEMO / TESTNET
+PROJECT REPORT
+
+1. INTRODUCTION
+
+This project implements a command-line based trading bot using Python for Binance USDT-M Futures Demo (Testnet).
+The objective of the project is to demonstrate practical usage of the Binance Futures API, including order placement,
+input validation, logging, and secure API credential handling.
+
+The bot interacts with Binance Futures Demo environment, ensuring that no real money is used during testing.
+This project was developed as part of a hiring assignment to evaluate backend development, API integration,
+and problem-solving skills.
+
+--------------------------------------------------------------------
+
+2. SYSTEM ARCHITECTURE
+
+The system is designed as a modular CLI application.
+
+Core components:
+- Python scripts for different order types
+- Binance Futures API for order execution
+- Environment variables for secure API key management
+- Logging mechanism for tracking actions and errors
+
+Each order type is implemented in a separate Python file, making the code reusable and easy to extend.
+The bot communicates directly with Binance Futures Demo servers using the official python-binance library.
+
+--------------------------------------------------------------------
+
+3. BINANCE FUTURES DEMO (TESTNET)
+
+The project uses Binance Futures Demo (Testnet), which provides simulated trading with virtual funds.
+
+Key characteristics:
+- No real money involved
+- Demo USDT balance (approximately 10,000 USDT)
+- Real-time market prices
+- Same trading rules as live futures trading
+
+A demo API key was created using the “Demo Trading API” option available on the Binance Futures Testnet website.
+
+--------------------------------------------------------------------
+
+4. IMPLEMENTED ORDER TYPES
+
+4.1 MARKET ORDERS
+
+Market orders are executed immediately at the best available market price.
+
+Command used:
+python src/market_orders.py BTCUSDT BUY 0.002
+
+The bot validates inputs and sends a MARKET order request to the Binance Futures API.
+All order responses are logged for traceability.
+
+4.2 LIMIT ORDERS
+
+Limit orders are placed at a specified price and remain open until the price condition is met.
+
+Command used:
+python src/limit_orders.py BTCUSDT SELL 0.002 95000
+
+The bot checks the minimum notional requirement before placing the order.
+If the order value is below 100 USDT, the request is rejected with a clear error message.
+
+--------------------------------------------------------------------
+
+5. INPUT VALIDATION
+
+Before placing any order, the bot performs validation checks:
+- Symbol format validation
+- Quantity and price conversion to numeric values
+- Minimum notional value check (100 USDT as per Binance Futures rules)
+
+This prevents unnecessary API failures and ensures compliance with exchange rules.
+
+--------------------------------------------------------------------
+
+6. LOGGING AND ERROR HANDLING
+
+All API requests, responses, and errors are logged in a structured log file named bot.log.
+
+The logging system records:
+- Order placement details
+- API responses
+- Error messages and exceptions
+
+This helps in debugging, monitoring, and auditing bot behavior.
+
+--------------------------------------------------------------------
+
+7. SECURITY AND API KEY MANAGEMENT
+
+API credentials are stored securely using environment variables.
+A .env file is used to store the API key and secret, which is excluded from version control using .gitignore.
+
+This approach prevents accidental exposure of sensitive credentials when uploading the project to GitHub.
+
+--------------------------------------------------------------------
+
+8. DEMONSTRATION AND RESULTS
+
+The bot was successfully tested on Binance Futures Demo environment.
+Market and Limit orders were placed and verified through:
+- Terminal output
+- Binance Futures Demo UI
+- bot.log entries
+
+Screenshots of successful order placement, open positions, and log entries are included as evidence.
+
+--------------------------------------------------------------------
+
+9. CONCLUSION
+
+This project successfully demonstrates:
+- Integration with Binance Futures API
+- CLI-based trading automation
+- Secure credential handling
+- Logging and validation best practices
+
+The bot can be further extended to support advanced order types such as OCO, TWAP, and Grid strategies.
+
+--------------------------------------------------------------------
+
+10. FUTURE IMPROVEMENTS
+
+Possible enhancements include:
+- Web-based or GUI interface
+- Advanced order strategies
+- Risk management features
+- WebSocket-based real-time market data handling
+
+--------------------------------------------------------------------
+
+END OF REPORT
