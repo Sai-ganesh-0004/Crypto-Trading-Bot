@@ -128,9 +128,4 @@ All API requests, responses, and errors are logged in the bot.log file.
 - Orders below this value will be rejected
 - Demo/Testnet execution may differ slightly from real trading
 
----
 
-## Disclaimer
-
-This project is for educational and evaluation purposes only.  
-It does not perform real trading or use real funds.
